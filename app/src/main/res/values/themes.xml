@@ -1,18 +1,18 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
-    <style name="Theme.Moodiary" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Moodiary" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorWhite</item>
-        <item name="colorPrimaryDark">@color/colorBlack</item>
+        <item name="colorPrimaryDark">@color/colorDarkBlack</item>
         <item name="colorAccent">@color/colorWhite</item>
         <item name="colorError">@color/colorWhite</item>
         <item name="colorSecondary">@color/colorBlack</item>
 
+        <item name="android:windowBackground">@color/colorBlack</item>
         <item name="android:windowDisablePreview">true</item>
-        <item name="android:statusBarColor" tools:targetApi="m">@color/colorBlack</item>
-        <item name="android:autofilledHighlight" tools:targetApi="o">@color/colorTransparent</item>
         <item name="android:fontFamily">@font/regular</item>
     </style>
 
+    <!--Text styles-->
     <style name="TextBase">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -22,4 +22,33 @@
         <item name="android:textColor">@color/colorWhite</item>
     </style>
 
+    <!--View styles-->
+    <style name="ImageBase">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:background">@color/colorTransparent</item>
+    </style>
+
+    <style name="ScrollView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+
+    <!--Layout styles-->
+    <style name="LayoutVertical">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="LayoutHorizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
 </resources>

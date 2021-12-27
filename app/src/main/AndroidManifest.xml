@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,10 +18,12 @@
         tools:ignore="AllowBackup"
         tools:targetApi="n">
         <activity
-            android:name=".ui.AppActivity"
-            android:exported="true" />
+            android:name=".presentation.ui.app.AppActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".ui.LaunchActivity"
+            android:name=".presentation.ui.app.LaunchActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
