@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Moodiary</string>
+    <string name="image">Image</string>
+    <string name="view_calendar">View Calendar</string>
+    <string name="how_was_your_day_today">How was your day today?</string>
+    <string name="quote_bad_day">There are good days and there are bad days, and this is one of them.</string>
+    <string name="author_bad_day">Lawrence Welk</string>
+    <string name="author_good_day">Robin Wright</string>
+    <string name="quote_good_day">If you\'re happy, if you\'re feeling good, then nothing else matters.</string>
+    <string name="marked_as_good_day">marked as good day :)</string>
+    <string name="marked_as_bad_day">marked as bad day :(</string>
 </resources>

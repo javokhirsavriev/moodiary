@@ -2,17 +2,131 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutApp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.AppActivity">
+    tools:context=".presentation.ui.app.AppActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+    <ImageView
+        android:id="@+id/imageLogo"
+        style="@style/ImageBase"
+        android:layout_height="@dimen/dp_56"
+        android:layout_marginTop="@dimen/dp_20"
+        android:contentDescription="@string/image"
+        android:src="@drawable/ic_logo_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        style="@style/ScrollView"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_20"
+        app:layout_constraintBottom_toTopOf="@+id/layoutViewCalendar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageLogo">
+
+        <LinearLayout
+            style="@style/LayoutVertical"
+            android:layout_marginTop="@dimen/dp_56"
+            android:gravity="center"
+            android:padding="@dimen/dp_24">
+
+            <TextView
+                android:id="@+id/textToday"
+                style="@style/TextBase"
+                android:textColor="@color/colorGray500"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:id="@+id/textStatus"
+                style="@style/TextBase"
+                android:layout_marginTop="@dimen/dp_6"
+                android:gravity="center" />
+
+            <LinearLayout
+                android:id="@+id/layoutUnmark"
+                style="@style/LayoutHorizontal"
+                android:layout_marginTop="@dimen/dp_36"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/imageGood"
+                    style="@style/ImageBase"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/image"
+                    android:src="@drawable/bg_oval"
+                    app:tint="@color/colorWhite" />
+
+                <ImageView
+                    android:id="@+id/imageBad"
+                    style="@style/ImageBase"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/image"
+                    android:src="@drawable/bg_oval"
+                    app:tint="@color/colorDarkBlack" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutMark"
+                style="@style/LayoutVertical"
+                android:layout_marginTop="@dimen/dp_36"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textQuote"
+                    style="@style/TextBase"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_8"
+                    android:textSize="@dimen/sp_24" />
+
+                <View
+                    android:id="@+id/viewMark"
+                    android:layout_width="@dimen/dp_56"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_marginTop="@dimen/dp_36" />
+
+                <TextView
+                    android:id="@+id/textAuthor"
+                    style="@style/TextBase"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:textSize="@dimen/sp_16" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/layoutViewCalendar"
+        style="@style/LayoutVertical"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:padding="@dimen/dp_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textViewCalendar"
+            style="@style/TextBase"
+            android:text="@string/view_calendar"
+            android:textSize="@dimen/sp_16" />
+
+        <View
+            android:id="@+id/viewCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_6" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

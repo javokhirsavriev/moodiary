@@ -1,7 +1,8 @@
 buildscript {
     ext {
-        kotlinVersion = "1.5.31"
-        navVersion = "2.4.0-beta02"
+        kotlinVersion = "1.6.10"
+        daggerHiltVersion = "2.40.5"
+        lifecycleVersion = "2.4.0"
     }
 
     repositories {
@@ -10,9 +11,9 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.3"
+        classpath "com.android.tools.build:gradle:7.0.4"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navVersion"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$daggerHiltVersion"
     }
 }
 
