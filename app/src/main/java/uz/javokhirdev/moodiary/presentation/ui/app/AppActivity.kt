@@ -3,9 +3,12 @@ package uz.javokhirdev.moodiary.presentation.ui.app
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
 import uz.javokhirdev.moodiary.R
+import uz.javokhirdev.moodiary.data.db.days.DayEntity
 import uz.javokhirdev.moodiary.databinding.ActivityAppBinding
+import uz.javokhirdev.moodiary.presentation.ui.calendar.CalendarActivity
 import uz.javokhirdev.moodiary.utils.*
 
 @AndroidEntryPoint
@@ -20,19 +23,33 @@ class AppActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         with(binding) {
-            textToday.text = DateUtils.getToday(DATE_FORMAT_2)
-
             layoutViewCalendar.onClick { navigateToCalendar() }
 
-            imageGood.onClick { setGoodDay() }
-            imageBad.onClick { setBadDay() }
+            imageGood.onClick { viewModel.insertOrUpdate(true) }
+            imageBad.onClick { viewModel.insertOrUpdate(false) }
+        }
+
+        with(viewModel) {
+            lifecycleScope.launchWhenStarted { todayState.collect { onTodayState(it) } }
         }
     }
 
     override fun onResume() {
         super.onResume()
 
-        setUnmark()
+        viewModel.getDay()
+    }
+
+    private fun onTodayState(uiState: UIState<DayEntity>) {
+        binding.textToday.text = DateUtils.getToday(DATE_FORMAT_2)
+
+        uiState onSuccess {
+            data?.let {
+                if (it.isGoodDay) setGoodDay() else setBadDay()
+            } ?: setUnmark()
+        } onFailure {
+            setUnmark()
+        }
     }
 
     private fun setGoodDay() {
@@ -103,6 +120,6 @@ class AppActivity : AppCompatActivity() {
     }
 
     private fun navigateToCalendar() {
-
+        start(CalendarActivity::class.java)
     }
 }

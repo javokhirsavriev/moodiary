@@ -14,7 +14,7 @@ class ThrottledOnClickListener(private val onClick: SingleBlock<View>) : View.On
 
         lastClickMap[clickedView] = currentTimestamp
 
-        if (previousClickTimestamp == null || currentTimestamp - previousClickTimestamp.toLong() > 1000L) {
+        if (previousClickTimestamp == null || currentTimestamp - previousClickTimestamp.toLong() > 500L) {
             onClick.invoke(clickedView)
         }
     }
