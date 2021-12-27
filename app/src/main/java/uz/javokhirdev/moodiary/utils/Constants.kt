@@ -7,7 +7,7 @@ const val MATCH_PARENT = -1
 const val WRAP_CONTENT = -2
 
 /* Date and time formats */
-const val DATE_FORMAT_1 = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+const val DATE_FORMAT_1 = "yyyyMMdd"
 const val DATE_FORMAT_2 = "EEEE, MMMM dd, yyyy"
 
 /* Build versions */

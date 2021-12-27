@@ -3,6 +3,7 @@ buildscript {
         kotlinVersion = "1.6.10"
         daggerHiltVersion = "2.40.5"
         lifecycleVersion = "2.4.0"
+        roomVersion = "2.4.0"
     }
 
     repositories {
