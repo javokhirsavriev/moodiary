@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.calendar.CalendarActivity">
+
+    <androidx.core.widget.NestedScrollView
+        style="@style/ScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout style="@style/LayoutVertical">
+
+            <LinearLayout
+                android:id="@+id/layoutDays"
+                style="@style/LayoutVertical"
+                android:paddingBottom="@dimen/dp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <me.relex.circleindicator.CircleIndicator3
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:ci_drawable="@drawable/bg_indicator_white"
+                    app:ci_drawable_unselected="@drawable/bg_indicator_gray" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:paddingStart="@dimen/dp_20"
+                android:paddingEnd="@dimen/dp_20">
+
+                <LinearLayout
+                    android:id="@+id/layoutPrev"
+                    style="@style/LayoutVertical"
+                    android:layout_width="wrap_content"
+                    android:padding="@dimen/dp_8">
+
+                    <TextView
+                        style="@style/TextBase"
+                        android:text="@string/prev"
+                        android:textSize="@dimen/sp_14" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:background="@color/colorWhite" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LayoutVertical"
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textMonth"
+                        style="@style/TextBase"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        android:id="@+id/textYear"
+                        style="@style/TextBase"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutNext"
+                    style="@style/LayoutVertical"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/dp_8">
+
+                    <TextView
+                        style="@style/TextBase"
+                        android:text="@string/next"
+                        android:textSize="@dimen/sp_14" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:background="@color/colorWhite" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <uz.javokhirdev.moodiary.presentation.calendar.CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20" />
+
+            <LinearLayout
+                style="@style/LayoutHorizontal"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:baselineAligned="false"
+                android:gravity="center_vertical">
+
+                <View
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:background="@color/colorWhite" />
+
+                <TextView
+                    style="@style/TextBase"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:text="@string/good_days"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LayoutHorizontal"
+                android:layout_margin="@dimen/dp_20"
+                android:baselineAligned="false"
+                android:gravity="center_vertical">
+
+                <View
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:background="@color/colorDarkBlack" />
+
+                <TextView
+                    style="@style/TextBase"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:text="@string/bad_days"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageButton
+        android:id="@+id/buttonBack"
+        style="@style/ImageBase"
+        android:layout_width="@dimen/dp_56"
+        android:layout_height="@dimen/dp_56"
+        android:contentDescription="@string/image"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

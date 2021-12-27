@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bg_indicator_gray.xml" value="0.30462962962962964" />
+        <entry key="app/src/main/res/drawable/bg_indicator_white.xml" value="0.30462962962962964" />
         <entry key="app/src/main/res/drawable/bg_oval.xml" value="0.30462962962962964" />
+        <entry key="app/src/main/res/drawable/bg_rectangle.xml" value="0.30462962962962964" />
         <entry key="app/src/main/res/drawable/ic_apps.xml" value="0.30462962962962964" />
         <entry key="app/src/main/res/drawable/ic_back.xml" value="0.30462962962962964" />
         <entry key="app/src/main/res/drawable/ic_close.xml" value="0.30462962962962964" />
@@ -17,9 +20,11 @@
         <entry key="app/src/main/res/drawable/ic_star.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_textlogo.xml" value="0.32037037037037036" />
         <entry key="app/src/main/res/layout/activity_app.xml" value="0.2722222222222222" />
+        <entry key="app/src/main/res/layout/activity_calendar.xml" value="0.3192307692307692" />
         <entry key="app/src/main/res/layout/activity_launch.xml" value="0.2722222222222222" />
         <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.2722222222222222" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2722222222222222" />
+        <entry key="app/src/main/res/layout/item_percent.xml" value="0.5" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="1.4416666666666667" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="1.4416666666666667" />
       </map>

@@ -5,10 +5,10 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import uz.javokhirdev.moodiary.R
 import uz.javokhirdev.moodiary.data.db.days.DayEntity
 import uz.javokhirdev.moodiary.databinding.ActivityAppBinding
+import uz.javokhirdev.moodiary.presentation.ui.calendar.CalendarActivity
 import uz.javokhirdev.moodiary.utils.*
 
 @AndroidEntryPoint
@@ -23,8 +23,6 @@ class AppActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         with(binding) {
-            textToday.text = DateUtils.getToday(DATE_FORMAT_2)
-
             layoutViewCalendar.onClick { navigateToCalendar() }
 
             imageGood.onClick { viewModel.insertOrUpdate(true) }
@@ -43,6 +41,8 @@ class AppActivity : AppCompatActivity() {
     }
 
     private fun onTodayState(uiState: UIState<DayEntity>) {
+        binding.textToday.text = DateUtils.getToday(DATE_FORMAT_2)
+
         uiState onSuccess {
             data?.let {
                 if (it.isGoodDay) setGoodDay() else setBadDay()
@@ -120,6 +120,6 @@ class AppActivity : AppCompatActivity() {
     }
 
     private fun navigateToCalendar() {
-
+        start(CalendarActivity::class.java)
     }
 }

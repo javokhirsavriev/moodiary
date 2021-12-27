@@ -9,4 +9,9 @@
     <string name="quote_good_day">If you\'re happy, if you\'re feeling good, then nothing else matters.</string>
     <string name="marked_as_good_day">marked as good day :)</string>
     <string name="marked_as_bad_day">marked as bad day :(</string>
+    <string name="good_days">Good days</string>
+    <string name="bad_days">Bad days</string>
+    <string name="days">Days</string>
+    <string name="next">Next</string>
+    <string name="prev">Prev</string>
 </resources>

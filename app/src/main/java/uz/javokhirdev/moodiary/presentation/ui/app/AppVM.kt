@@ -6,11 +6,11 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import org.joda.time.DateTime
 import uz.javokhirdev.moodiary.data.db.days.DayEntity
 import uz.javokhirdev.moodiary.data.db.days.DaysRepository
-import uz.javokhirdev.moodiary.utils.DATE_FORMAT_1
-import uz.javokhirdev.moodiary.utils.DateUtils
-import uz.javokhirdev.moodiary.utils.UIState
+import uz.javokhirdev.moodiary.utils.*
+import uz.javokhirdev.moodiary.utils.DATE_FORMAT_3
 import javax.inject.Inject
 
 @HiltViewModel
@@ -40,8 +40,11 @@ class AppVM @Inject constructor(private val daysRepository: DaysRepository) : Vi
     fun insertOrUpdate(isGoodDay: Boolean) {
         viewModelScope.launch {
             try {
-                val today = DateUtils.getToday(DATE_FORMAT_1)
-                val entity = DayEntity(today, isGoodDay)
+                val dateTime = DateTime()
+                val today = dateTime.toString(DATE_FORMAT_1)
+                val dayOfMonth = dateTime.toString(DAY_PATTERN)
+                val monthAndYear = dateTime.toString(DATE_FORMAT_3)
+                val entity = DayEntity(today, dayOfMonth, monthAndYear, isGoodDay)
 
                 daysRepository.insert(entity)
 

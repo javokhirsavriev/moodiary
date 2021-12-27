@@ -7,5 +7,7 @@ import androidx.room.PrimaryKey
 data class DayEntity(
     @PrimaryKey
     val createdAt: String,
+    val dayOfMonth: String,
+    val monthAndYear: String,
     val isGoodDay: Boolean = false
 )

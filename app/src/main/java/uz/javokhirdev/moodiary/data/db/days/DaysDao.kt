@@ -14,6 +14,9 @@ interface DaysDao {
     @Query("SELECT * FROM days")
     suspend fun getDays(): List<DayEntity>
 
+    @Query("SELECT * FROM days WHERE monthAndYear = :monthAndYear")
+    suspend fun getMonthDays(monthAndYear: String): List<DayEntity>
+
     @Insert
     suspend fun insert(obj: DayEntity): Long
 
